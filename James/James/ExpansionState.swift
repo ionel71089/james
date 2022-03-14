@@ -44,7 +44,7 @@ struct ExpansionState: RawRepresentable {
     var files: Bool = false
     
     init() {
-        files = true
+        files = false
     }
 }
 

@@ -8,27 +8,40 @@
 import SwiftUI
 
 struct RequestsTable: View {
-    @Binding var selectedFile: File.ID?
+    @Binding var selectedFile: Set<RequestFilter.ID>
     @EnvironmentObject var model: Model
     
     var table: some View {
-        Table(model.transactions) {
-            TableColumn("Type", value: \.type.rawValue)
-            TableColumn("Host", value: \.host)
-            TableColumn("Path", value: \.host)
+        //        Table(model.transactions) {
+        //            TableColumn("Type", value: \.type.rawValue)
+        //            TableColumn("Host", value: \.host)
+        //            TableColumn("Path", value: \.host)
+        //        }
+        
+        List(model.transactions) { transaction in
+            HStack {
+                Image(systemName: transaction.type.icon)
+                Text(transaction.type.rawValue)
+                Text(transaction.status)
+                Text(transaction.response)
+                if !transaction.json.isEmpty {
+                    Text("JSON")
+                }
+                Text(transaction.start)
+                Text(transaction.end)
+            }
         }
     }
     
     var body: some View {
         table
             .navigationTitle("Requests")
-            .navigationSubtitle("\(selectedFile?.description ?? "")")
     }
 }
 
 struct RequestsTable_Previews: PreviewProvider {
     static var previews: some View {
-        RequestsTable(selectedFile: .constant(nil))
+        RequestsTable(selectedFile: .constant(.init()))
             .environmentObject(Model())
     }
 }

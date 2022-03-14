@@ -9,7 +9,8 @@ import Foundation
 
 class Model: ObservableObject {
     @Published var transactions: [Transaction] = []
-    @Published var files: [File] = []
+    @Published var files: [RequestFilter] = []
+    @Published var otherRequest: [RequestFilter] = []
     
     init() {
         loadFile()
@@ -17,13 +18,20 @@ class Model: ObservableObject {
     
     func loadFile() {
         do {
-        let filePath = "/Users/ionel.lescai/projects/james/output.json"
-        transactions = try .fromFile(path: URL(fileURLWithPath: filePath))
-        let fileNames = Set(transactions
-                                .filter { !$0.fileName.isEmpty }
-                                .map { $0.fileName })
-                                .sorted()
-        files = fileNames.map { File(name: $0) }
+            let filePath = "/Users/ionel.lescai/projects/james/output.json"
+            transactions = try .fromFile(path: URL(fileURLWithPath: filePath))
+            let fileNames = Set(transactions
+                                    .filter { !$0.fileName.isEmpty }
+                                    .map { $0.fileName })
+                .sorted()
+            files = fileNames.map { RequestFilter(name: $0, systemImage: "doc") }
+            otherRequest = [
+                RequestFilter(name: "Get url", systemImage: Transaction.RequestType.getUrl.icon),
+                RequestFilter(name: "Upload", systemImage: Transaction.RequestType.getUrl.icon),
+                RequestFilter(name: "Job tracking", systemImage: Transaction.RequestType.jobTracking.icon),
+                RequestFilter(name: "User info", systemImage: "person"),
+                RequestFilter(name: "Token refresh", systemImage: "key"),
+            ]
         } catch {
             print(error)
         }
@@ -55,8 +63,24 @@ struct Transaction: Identifiable {
     let jobId: String
 }
 
+extension Transaction.RequestType {
+    var icon: String {
+        switch self {
+            case .getUrl:
+                return "square"
+            case .upload:
+                return "circle"
+            case .jobTracking:
+                return "diamond"
+            case .unknown:
+                return "questionmark.circle"
+        }
+    }
+}
+
 /// The file being uploaded in the requests, with its original name
-struct File: Identifiable {
+struct RequestFilter: Identifiable {
     let id = UUID().uuidString
     let name: String
+    let systemImage: String
 }

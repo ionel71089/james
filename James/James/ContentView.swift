@@ -8,13 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    @SceneStorage("selectedFile") var selectedFile: File.ID?
+    @State var selectedFiles = Set<RequestFilter.ID>()
     
     var body: some View {
         NavigationView {
-            Sidebar(selectedFile: $selectedFile)
+            Sidebar(selectedFiles: $selectedFiles)
                 .frame(minWidth: 200)
-            RequestsTable(selectedFile: $selectedFile)
+            
+            VSplitView {
+                RequestsTable(selectedFile: $selectedFiles)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                TabView {
+                    Text("Tab 1")
+                        .tabItem {
+                            Label("Details", systemImage: "")
+                        }
+                    
+                    Text("Tab 2")
+                        .tabItem {
+                            Label("Timeline", systemImage: "clock")
+                        }
+                    
+                    Text("Tab 3")
+                        .tabItem {
+                            Label("Chart", systemImage: "chart.bar")
+                        }
+                }
+                .frame(maxWidth: .infinity, minHeight: 200, idealHeight: 200, maxHeight: .infinity)
+                
+                
+                    
+            }
         }
     }
 }
