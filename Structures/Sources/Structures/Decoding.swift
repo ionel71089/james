@@ -1,8 +1,8 @@
 //
 //  Decoding.swift
-//  James
+//  
 //
-//  Created by Ionel Lescai on 13.03.2022.
+//  Created by Ionel Lescai on 15.03.2022.
 //
 
 import Foundation
@@ -28,6 +28,7 @@ struct CharlesSessionFile: Decodable {
         var json: String?
         var fileId: String?
         var jobId: String?
+        var jobStatus: String?
     }
     
     fileprivate static func fromFile(path: URL) throws -> [TransactionDTO] {
@@ -39,7 +40,7 @@ struct CharlesSessionFile: Decodable {
 }
 
 extension Array where Element == Transaction {
-    static func fromFile(path: URL) throws -> [Transaction] {
+    public static func fromFile(path: URL) throws -> [Transaction] {
         try CharlesSessionFile
             .fromFile(path: path)
             .map {
@@ -55,7 +56,8 @@ extension Array where Element == Transaction {
                             response: $0.response,
                             json: $0.json ?? "",
                             fileId: $0.fileId ?? "",
-                            jobId: $0.jobId ?? "")
+                            jobId: $0.jobId ?? "",
+                            jobStatus: $0.jobStatus ?? "unknown")
             }
     }
 }

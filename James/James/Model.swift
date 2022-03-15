@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import Structures
 
 class Model: ObservableObject {
     @Published var transactions: [Transaction] = []
     @Published var files: [RequestFilter] = []
-    @Published var otherRequest: [RequestFilter] = []
+    @Published var otherRequest: [RequestFilter] = []    
+    @Published var jobTrackingData: [(String, Int)] = []
+    @Published var jobStatus: [(String, Int)] = []
     
     init() {
         loadFile()
@@ -27,40 +30,45 @@ class Model: ObservableObject {
             files = fileNames.map { RequestFilter(name: $0, systemImage: "doc") }
             otherRequest = [
                 RequestFilter(name: "Get url", systemImage: Transaction.RequestType.getUrl.icon),
-                RequestFilter(name: "Upload", systemImage: Transaction.RequestType.getUrl.icon),
+                RequestFilter(name: "Upload", systemImage: Transaction.RequestType.upload.icon),
                 RequestFilter(name: "Job tracking", systemImage: Transaction.RequestType.jobTracking.icon),
                 RequestFilter(name: "User info", systemImage: "person"),
                 RequestFilter(name: "Token refresh", systemImage: "key"),
             ]
+            
+            makeJobTrackingData()
+            
         } catch {
             print(error)
         }
     }
-}
-
-struct Transaction: Identifiable {
-    let id = UUID().uuidString
     
-    enum RequestType: String, Decodable {
-        case getUrl = "GET_URL"
-        case upload  = "UPLOAD"
-        case jobTracking = "JOB_TRACKING"
-        case unknown = "UNKNOWN"
+    func makeJobTrackingData() {
+        var jobIdCount = [String: Int]()
+        var jobStatusCount = [String: Int]()
+        
+        transactions
+            .filter { $0.type == .jobTracking }
+            .map { ($0.jobId, $0.jobStatus) }
+            .forEach { (jobId, jobStatus) in
+                jobIdCount[jobId, default: 0] += 1
+                jobStatusCount[jobStatus, default: 0] += 1
+            }
+        let maximumRequests = jobIdCount.values.max() ?? 0
+        
+        var jobData = [(String, Int)]()
+        for value in 1...maximumRequests {
+            let jobs = jobIdCount.filter { $0.value == value }
+            jobData.append(("\(value)", jobs.count))
+        }
+        
+        jobTrackingData = jobData
+        jobStatus = [
+            ("JobNotStarted", jobStatusCount["JobNotStarted", default: 0]),
+            ("JobInProgress", jobStatusCount["JobInProgress", default: 0]),
+            ("JobDone", jobStatusCount["JobDone", default: 0]),
+        ]
     }
-    
-    let type: RequestType
-    let fileName: String
-    let start: String
-    let end: String
-    let status: String
-    let method: String
-    let host: String
-    let path: String
-    let query: String
-    let response: String
-    let json: String
-    let fileId: String
-    let jobId: String
 }
 
 extension Transaction.RequestType {

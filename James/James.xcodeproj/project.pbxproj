@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C512E74C27DFB22400A7EE2B /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512E74B27DFB22400A7EE2B /* PieChart.swift */; };
+		C512E74E27DFD0E000A7EE2B /* DistinctColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512E74D27DFD0E000A7EE2B /* DistinctColors.swift */; };
+		C512E75227E0A36400A7EE2B /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = C512E75127E0A36400A7EE2B /* Structures */; };
 		C5B4F02627DD0138000BEFD9 /* JamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F02527DD0138000BEFD9 /* JamesApp.swift */; };
 		C5B4F02827DD0138000BEFD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F02727DD0138000BEFD9 /* ContentView.swift */; };
 		C5B4F02A27DD013E000BEFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B4F02927DD013E000BEFD9 /* Assets.xcassets */; };
@@ -16,10 +19,13 @@
 		C5B4F04427DD013E000BEFD9 /* JamesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F04327DD013E000BEFD9 /* JamesUITestsLaunchTests.swift */; };
 		C5B4F05127DDFFF6000BEFD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F05027DDFFF6000BEFD9 /* Model.swift */; };
 		C5B4F05327DE0039000BEFD9 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F05227DE0039000BEFD9 /* Sidebar.swift */; };
-		C5B4F05527DE1362000BEFD9 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F05427DE1362000BEFD9 /* Decoding.swift */; };
 		C5B4F05727DE1966000BEFD9 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F05627DE1966000BEFD9 /* Util.swift */; };
 		C5B4F05B27DE19FA000BEFD9 /* ExpansionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F05A27DE19FA000BEFD9 /* ExpansionState.swift */; };
 		C5B4F05E27DE1E8B000BEFD9 /* RequestsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F05D27DE1E8B000BEFD9 /* RequestsTable.swift */; };
+		C5B4F06627DF58D4000BEFD9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F06527DF58D4000BEFD9 /* Charts.swift */; };
+		C5B4F09927DF63C7000BEFD9 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F09827DF63C7000BEFD9 /* BarChart.swift */; };
+		C5B4F09B27DF6E5C000BEFD9 /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F09A27DF6E5C000BEFD9 /* Lerp.swift */; };
+		C5B4F09D27DF6E66000BEFD9 /* GeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4F09C27DF6E66000BEFD9 /* GeometryExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C512E74B27DFB22400A7EE2B /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		C512E74D27DFD0E000A7EE2B /* DistinctColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistinctColors.swift; sourceTree = "<group>"; };
+		C512E74F27E0A1FC00A7EE2B /* Structures */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Structures; path = ../Structures; sourceTree = "<group>"; };
 		C5B4F02227DD0138000BEFD9 /* James.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = James.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B4F02527DD0138000BEFD9 /* JamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamesApp.swift; sourceTree = "<group>"; };
 		C5B4F02727DD0138000BEFD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,10 +62,13 @@
 		C5B4F04327DD013E000BEFD9 /* JamesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C5B4F05027DDFFF6000BEFD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C5B4F05227DE0039000BEFD9 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
-		C5B4F05427DE1362000BEFD9 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
 		C5B4F05627DE1966000BEFD9 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C5B4F05A27DE19FA000BEFD9 /* ExpansionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionState.swift; sourceTree = "<group>"; };
 		C5B4F05D27DE1E8B000BEFD9 /* RequestsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTable.swift; sourceTree = "<group>"; };
+		C5B4F06527DF58D4000BEFD9 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
+		C5B4F09827DF63C7000BEFD9 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		C5B4F09A27DF6E5C000BEFD9 /* Lerp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
+		C5B4F09C27DF6E66000BEFD9 /* GeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C512E75227E0A36400A7EE2B /* Structures in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,13 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C512E75027E0A36400A7EE2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C5B4F01927DD0138000BEFD9 = {
 			isa = PBXGroup;
 			children = (
+				C512E74F27E0A1FC00A7EE2B /* Structures */,
 				C5B4F02427DD0138000BEFD9 /* James */,
 				C5B4F03627DD013E000BEFD9 /* JamesTests */,
 				C5B4F04027DD013E000BEFD9 /* JamesUITests */,
 				C5B4F02327DD0138000BEFD9 /* Products */,
+				C512E75027E0A36400A7EE2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,10 +135,15 @@
 				C5B4F05D27DE1E8B000BEFD9 /* RequestsTable.swift */,
 				C5B4F05A27DE19FA000BEFD9 /* ExpansionState.swift */,
 				C5B4F05627DE1966000BEFD9 /* Util.swift */,
+				C5B4F06527DF58D4000BEFD9 /* Charts.swift */,
+				C5B4F09827DF63C7000BEFD9 /* BarChart.swift */,
+				C512E74B27DFB22400A7EE2B /* PieChart.swift */,
+				C5B4F09A27DF6E5C000BEFD9 /* Lerp.swift */,
+				C5B4F09C27DF6E66000BEFD9 /* GeometryExtensions.swift */,
+				C512E74D27DFD0E000A7EE2B /* DistinctColors.swift */,
 				C5B4F02927DD013E000BEFD9 /* Assets.xcassets */,
 				C5B4F02E27DD013E000BEFD9 /* James.entitlements */,
 				C5B4F05027DDFFF6000BEFD9 /* Model.swift */,
-				C5B4F05427DE1362000BEFD9 /* Decoding.swift */,
 				C5B4F02B27DD013E000BEFD9 /* Preview Content */,
 			);
 			path = James;
@@ -163,6 +190,9 @@
 			dependencies = (
 			);
 			name = James;
+			packageProductDependencies = (
+				C512E75127E0A36400A7EE2B /* Structures */,
+			);
 			productName = James;
 			productReference = C5B4F02227DD0138000BEFD9 /* James.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +265,8 @@
 				Base,
 			);
 			mainGroup = C5B4F01927DD0138000BEFD9;
+			packageReferences = (
+			);
 			productRefGroup = C5B4F02327DD0138000BEFD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,14 +309,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5B4F05527DE1362000BEFD9 /* Decoding.swift in Sources */,
+				C512E74C27DFB22400A7EE2B /* PieChart.swift in Sources */,
+				C5B4F09B27DF6E5C000BEFD9 /* Lerp.swift in Sources */,
 				C5B4F05727DE1966000BEFD9 /* Util.swift in Sources */,
 				C5B4F05E27DE1E8B000BEFD9 /* RequestsTable.swift in Sources */,
+				C5B4F06627DF58D4000BEFD9 /* Charts.swift in Sources */,
 				C5B4F05127DDFFF6000BEFD9 /* Model.swift in Sources */,
 				C5B4F02827DD0138000BEFD9 /* ContentView.swift in Sources */,
 				C5B4F05327DE0039000BEFD9 /* Sidebar.swift in Sources */,
 				C5B4F02627DD0138000BEFD9 /* JamesApp.swift in Sources */,
+				C5B4F09927DF63C7000BEFD9 /* BarChart.swift in Sources */,
+				C512E74E27DFD0E000A7EE2B /* DistinctColors.swift in Sources */,
 				C5B4F05B27DE19FA000BEFD9 /* ExpansionState.swift in Sources */,
+				C5B4F09D27DF6E66000BEFD9 /* GeometryExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +639,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C512E75127E0A36400A7EE2B /* Structures */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Structures;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C5B4F01A27DD0138000BEFD9 /* Project object */;
 }

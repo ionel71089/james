@@ -27,6 +27,9 @@ struct RequestsTable: View {
                 if !transaction.json.isEmpty {
                     Text("JSON")
                 }
+//                if !transaction.jobId.isEmpty {
+//                    Text(transaction.jobId)
+//                }
                 Text(transaction.start)
                 Text(transaction.end)
             }

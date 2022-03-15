@@ -22,7 +22,7 @@ struct ContentView: View {
                 TabView {
                     Text("Tab 1")
                         .tabItem {
-                            Label("Details", systemImage: "")
+                            Label("Details", systemImage: "info.circle")
                         }
                     
                     Text("Tab 2")
@@ -30,7 +30,7 @@ struct ContentView: View {
                             Label("Timeline", systemImage: "clock")
                         }
                     
-                    Text("Tab 3")
+                    Charts()
                         .tabItem {
                             Label("Chart", systemImage: "chart.bar")
                         }
