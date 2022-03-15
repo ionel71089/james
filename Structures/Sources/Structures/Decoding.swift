@@ -57,7 +57,7 @@ extension Array where Element == Transaction {
                             json: $0.json ?? "",
                             fileId: $0.fileId ?? "",
                             jobId: $0.jobId ?? "",
-                            jobStatus: $0.jobStatus ?? "unknown")
+                            jobStatus: $0.jobStatus ?? "")
             }
     }
 }

@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct Transaction: Identifiable {
+public struct Transaction: Identifiable, Encodable {
     public let id = UUID().uuidString
     
-    public enum RequestType: String, Decodable {
+    public enum RequestType: String, Codable {
         case getUrl = "GET_URL"
         case upload  = "UPLOAD"
         case jobTracking = "JOB_TRACKING"
@@ -32,33 +32,20 @@ public struct Transaction: Identifiable {
     public let jobId: String
     public let jobStatus: String
     
-//    public init(type: Transaction.RequestType,
-//                fileName: String,
-//                start: String,
-//                end: String,
-//                status: String,
-//                method: String,
-//                host: String,
-//                path: String,
-//                query: String,
-//                response: String,
-//                json: String,
-//                fileId: String,
-//                jobId: String,
-//                jobStatus: String) {
-//        self.type = type
-//        self.fileName = fileName
-//        self.start = start
-//        self.end = end
-//        self.status = status
-//        self.method = method
-//        self.host = host
-//        self.path = path
-//        self.query = query
-//        self.response = response
-//        self.json = json
-//        self.fileId = fileId
-//        self.jobId = jobId
-//        self.jobStatus = jobStatus
-//    }
+    public enum CodingKeys: CodingKey {
+        case type
+        case fileName
+        case start
+        case end
+        case status
+        case method
+        case host
+        case path
+        case query
+        case response
+        case json
+        case fileId
+        case jobId
+        case jobStatus
+    }
 }
