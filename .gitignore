@@ -40,3 +40,4 @@ fastlane/sign&cert
 *.bak
 
 input.chlsx
+sessions
