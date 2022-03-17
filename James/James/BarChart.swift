@@ -15,9 +15,15 @@ struct BarChart: View {
         data.map { $0.1 }.max() ?? 0
     }
     
+    var linesToShow: [Int] {
+        let step = maxValue <= 20 ? 1 : Int(sqrt(Double(maxValue)))
+        
+        return Array(stride(from: 0, through: maxValue, by: step))
+    }
+    
     var legend: some View {
         GeometryReader { geo in
-            ForEach(0..<maxValue) { index in
+            ForEach(linesToShow, id: \.self) { index in
                 Text("\(maxValue - index)")
                     .foregroundColor(.white)
                     .offset(y: CGFloat(index)
@@ -30,7 +36,7 @@ struct BarChart: View {
     
     var linesAndBars: some View {
         GeometryReader { geo in
-            ForEach(0..<maxValue) { index in
+            ForEach(linesToShow, id: \.self) { index in
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.white)

@@ -14,6 +14,7 @@ struct Charts: View {
         ScrollView {
             HStack {
                 BarChart(title: "Job tracking count", data: $model.jobTrackingData)
+                    .frame(minWidth: 300, minHeight: 300)
                 PieChart(title: "Job Status",
                          values: model.jobStatus.map { Double($0.1) },
                          valueTitles: model.jobStatus.map { "\($0.0) (\($0.1))" },

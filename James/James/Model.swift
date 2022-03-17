@@ -54,7 +54,7 @@ class Model: ObservableObject {
                 jobIdCount[jobId, default: 0] += 1
                 jobStatusCount[jobStatus, default: 0] += 1
             }
-        let maximumRequests = jobIdCount.values.max() ?? 0
+        let maximumRequests = max(jobIdCount.values.max() ?? 0, 10)
         
         var jobData = [(String, Int)]()
         for value in 1...maximumRequests {
