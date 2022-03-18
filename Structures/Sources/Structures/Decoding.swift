@@ -24,7 +24,7 @@ struct CharlesSessionFile: Decodable {
         var host: String
         var path: String?
         var query: String?
-        var response: String
+        var response: String?
         var json: String?
         var fileId: String?
         var jobId: String?
@@ -53,7 +53,7 @@ extension Array where Element == Transaction {
                             host: $0.host,
                             path: $0.path ?? "",
                             query: $0.query ?? "",
-                            response: $0.response,
+                            response: $0.response ?? "",
                             json: $0.json ?? "",
                             fileId: $0.fileId ?? "",
                             jobId: $0.jobId ?? "",

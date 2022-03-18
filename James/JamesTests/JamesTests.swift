@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import James
+import Structures
 
 class JamesTests: XCTestCase {
 
