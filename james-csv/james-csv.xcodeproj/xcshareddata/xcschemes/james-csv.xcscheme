@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C5A3328127E0A47600601331"
-               BuildableName = "james-csv"
+               BuildableName = "json-to-csv"
                BlueprintName = "james-csv"
                ReferencedContainer = "container:james-csv.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C5A3328127E0A47600601331"
-            BuildableName = "james-csv"
+            BuildableName = "json-to-csv"
             BlueprintName = "james-csv"
             ReferencedContainer = "container:james-csv.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C5A3328127E0A47600601331"
-            BuildableName = "james-csv"
+            BuildableName = "json-to-csv"
             BlueprintName = "james-csv"
             ReferencedContainer = "container:james-csv.xcodeproj">
          </BuildableReference>
